@@ -30,7 +30,7 @@ O jogo é composto por diversos itens físicos e interativos, cada um com uma fu
 
 <h2>Modo 1: Sequência de Notas</h2>
 
-<h3>>Objetivo</h3>
+<h3>Objetivo</h3>
   Memorizar e repetir corretamente a sequência de sons (notas) emitidas ao longo das rodadas.
 
 <h3>Como Jogar</h3>
