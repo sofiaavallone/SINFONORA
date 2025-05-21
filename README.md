@@ -98,4 +98,4 @@ O Botão Tudo possui várias funções, ativadas de acordo com a forma como é p
     ao organizador que alguém declarou BINGO.
 
 
-Com este manual, você tem em mãos todas as instruções necessárias para configurar, operar e explorar os modos de jogo do Sinfonora com eficiência. Boa partida!
+<h4>Com este manual, você tem em mãos todas as instruções necessárias para configurar, operar e explorar os modos de jogo do Sinfonora com eficiência. Boa partida!</h4>
