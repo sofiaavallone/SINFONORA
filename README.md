@@ -52,12 +52,12 @@ O jogo é composto por diversos itens físicos e interativos, cada um com uma fu
 
 <h2>Modo 1: Sequência de Notas</h2>
 
-<h3>>Objetivo</h3>
+<h3>Objetivo</h3>
   Memorizar e repetir corretamente a sequência de sons (notas) emitidas ao longo das rodadas.
 
 <h2>Modo 2: Bingo Musical</h2>
 
-<h3>>Objetivo</h3>
+<h3>Objetivo</h3>
   Ouvir as notas tocadas e marcar as duplas correspondentes na cartela até completar uma linha, coluna ou diagonal.
   
 <h3>Como Jogar</h3>
@@ -79,22 +79,23 @@ O jogo é composto por diversos itens físicos e interativos, cada um com uma fu
 
 O Botão Tudo possui várias funções, ativadas de acordo com a forma como é pressionado. Cada ação emite um som específico para facilitar o reconhecimento da função ativada. Abaixo estão descritas todas as interações possíveis:
 
-<h3>Reiniciar o jogo:</h3>
-  Para reiniciar, o jogador deve pressionar e segurar o botão por 2 segundos. O sistema emite um som grave e contínuo, semelhante a um “buuuum”. Essa ação reinicia o sistema 
-  apaga a sequência atual. Está disponível em ambos os modos: Sequência de Notas e Bingo Musical.
-  
-<h3>Repetir sequência (exclusivo do modo Bingo Musical):</h3>
-  Ao dar dois toques rápidos no botão, o sistema emite dois bips médios (“bip-bip”) e repete a última dupla de notas tocadas. Isso é útil caso algum jogador não tenha escutado
-  claramente.
-  
-<h3>Pular rodada ou jogador (modo Sequência de Notas):</h3>
-  Um toque curto e simples aciona um bip agudo, que indica que o sistema irá ignorar o jogador atual e passar para o próximo.
-  
-<h3>Avançar nota (modo Bingo Musical):</h3>
-  Também feito com um toque curto, mas o som emitido é um bip médio. Essa ação toca uma nova dupla de notas musicais, seguindo a partida.
-  
-<h3>Confirmar “BINGO!” (modo Bingo Musical):</h3>
-  Quando o jogador completa sua cartela, deve pressionar o botão com três toques seguidos. O sistema responde com uma melodia festiva curta (como um “tan-tan-taaan”), que sinaliza
-  ao organizador que alguém declarou BINGO.
+  <h3>Reiniciar o jogo:</h3>
+    Para reiniciar, o jogador deve pressionar e segurar o botão por 2 segundos. O sistema emite um som grave e contínuo, semelhante a um “buuuum”. Essa ação reinicia o sistema 
+    apaga a sequência atual. Está disponível em ambos os modos: Sequência de Notas e Bingo Musical.
+    
+  <h3>Repetir sequência (exclusivo do modo Bingo Musical):</h3>
+    Ao dar dois toques rápidos no botão, o sistema emite dois bips médios (“bip-bip”) e repete a última dupla de notas tocadas. Isso é útil caso algum jogador não tenha escutado
+    claramente.
+    
+  <h3>Pular rodada ou jogador (modo Sequência de Notas):</h3>
+    Um toque curto e simples aciona um bip agudo, que indica que o sistema irá ignorar o jogador atual e passar para o próximo.
+    
+  <h3>Avançar nota (modo Bingo Musical):</h3>
+    Também feito com um toque curto, mas o som emitido é um bip médio. Essa ação toca uma nova dupla de notas musicais, seguindo a partida.
+    
+  <h3>Confirmar “BINGO!” (modo Bingo Musical):</h3>
+    Quando o jogador completa sua cartela, deve pressionar o botão com três toques seguidos. O sistema responde com uma melodia festiva curta (como um “tan-tan-taaan”), que sinaliza
+    ao organizador que alguém declarou BINGO.
+
 
 Com este manual, você tem em mãos todas as instruções necessárias para configurar, operar e explorar os modos de jogo do Sinfonora com eficiência. Boa partida!
