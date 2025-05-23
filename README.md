@@ -14,7 +14,7 @@ A componente musical desempenha papel fundamental no desenvolvimento do jogo, po
 
 O circuito deste projeto utiliza os seguintes componentes: LEDs RGB, buzzer, Arduino Mega, potenciômetro, botões e resistores. Devido à complexidade das conexões envolvidas, recomenda-se a consulta ao diagrama esquemático para compreender a disposição e a ligação dos componentes.
 
-![Imagem Ilustrativa](imagens/circuito.png)
+<img src="imagens/circuito.png" width="500">
 
 ## Layout
 
