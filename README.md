@@ -81,7 +81,7 @@ Ouvir as notas tocadas, podendo fazer associação visual ou sonora, e marcar as
 
 #### Cartelas Físicas do Bingo
 
-![Cartelas do Bingo](imagens/cartela.png)
+<img src="imagens/cartela.png" width="250">
 
 #### Observação
 
