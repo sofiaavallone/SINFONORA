@@ -20,7 +20,7 @@ O circuito deste projeto utiliza os seguintes componentes: LEDs RGB, buzzer, Ard
 
 Abaixo está o layout do Sinfonora, com foco em uma interface visual limpa, uso estratégico de cores e elementos posicionados para facilitar a interatividade e adaptação do jogador ao desafio proposto.
 
-![Imagem Ilustrativa](imagens/layout.jpeg)
+<img src="imagens/layout.jpeg" width="250">
 
 ## Código
 
