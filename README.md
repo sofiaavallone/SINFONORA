@@ -14,13 +14,13 @@ A componente musical desempenha papel fundamental no desenvolvimento do jogo, po
 
 O circuito deste projeto utiliza os seguintes componentes: LEDs RGB, buzzer, Arduino Mega, potenciômetro, botões e resistores. Devido à complexidade das conexões envolvidas, recomenda-se a consulta ao diagrama esquemático para compreender a disposição e a ligação dos componentes.
 
-<img src="imagens/circuito.png" width="700">
+<img src="circuito.png" width="700">
 
 ## Layout
 
 Abaixo está o layout do Sinfonora, com foco em uma interface visual limpa, uso estratégico de cores e elementos posicionados para facilitar a interatividade e adaptação do jogador ao desafio proposto.
 
-<img src="imagens/layout.jpeg" width="250">
+<img src="layout.jpeg" width="250">
 
 ## Código
 
@@ -73,15 +73,17 @@ Ouvir as notas tocadas, podendo fazer associação visual ou sonora, e marcar as
 2. Os jogadores procuram a combinação na cartela física e marcam;
 
 3. Ao completar linha, coluna ou diagonal:
-    - O jogador grita “BINGO!” e pressiona o Botão Tudo, ele irá repetir toda a sequência.
+    - O jogador grita “BINGO!” e pressiona o Botão Tudo e o jogo será finalizado.
 
 4. O Organizador confere manualmente a cartela:
-    - Dando 3 toques seguidos no Botão Tudo o orientador conseguirá conferir a cartela manualmente.
+    - Dando 3 toques seguidos no Botão Tudo, o orientador conseguirá conferir a cartela manualmente.
     - Caso esteja correto, a melodia da vitória toca.
 
 #### Cartelas Físicas do Bingo
 
-<img src="imagens/cartela.png" width="250">
+Cada cartela do Bingo Musical Sinfonora contém nove duplas de notas musicais, organizadas de forma única. As combinações foram criadas para desafiar sua memória auditiva e visual, e percepção musical.
+
+<img src="cartela.png" width="250">
 
 #### Observação
 
@@ -91,13 +93,13 @@ Não há narrações de notas, o jogo depende da audição e atenção do jogado
 
 O Botão Tudo é um componente essencial para a interação do jogador, permitindo o controle direto das ações no jogo. Sua resposta rápida e confiável garante o funcionamento eficiente das dinâmicas do sistema.
 
-| Ação | Como Fazer | Som Emitido | Função | Modo de Jogo |
-|------|------------|-------------|--------|--------------|
-| Reiniciar jogo | Toque longo (2 segundos) | Som grave contínuo (“buuuum”)| Reinicia sistema e apaga sequência atual | Sequência de Notas e Bingo Musical|
-| Repetir sequência | Dois toques rápidos | “bip-bip” (médio) | Repete a última dupla de notas | Bingo Musical |
-| Pular rodada/jogador | Toque curto simples | Bip agudo |Ignora jogador atual | Sequência de Notas |
-| Avançar nota | Toque curto simples | Bip médio | Toca nova dupla de notas | Bingo Musical |
-| Confirmar “BINGO!” | Três toques seguidos | Melodia curta festiva | Sinaliza “BINGO!” ao organizador | Bingo Musical|
+| Ação | Como Fazer | Função | Modo de Jogo |
+|------|------------|-------------|--------|
+| Reiniciar jogo | Toque longo (2 segundos) | Reinicia sistema e apaga sequência atual | Sequência de Notas e Bingo Musical|
+| Repetir sequência | Dois toques rápidos | Repete a última dupla de notas | Bingo Musical |
+| Pular rodada/jogador | Toque curto simples | Ignora jogador atual | Sequência de Notas |
+| Avançar nota | Toque curto simples | Toca nova dupla de notas | Bingo Musical |
+| Confirmar “BINGO!” | Três toques seguidos | Finaliza o jogo | Bingo Musical|
 
 ## Considerações Finais
 
