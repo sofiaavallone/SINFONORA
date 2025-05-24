@@ -14,13 +14,13 @@ A componente musical desempenha papel fundamental no desenvolvimento do jogo, po
 
 O circuito deste projeto utiliza os seguintes componentes: LEDs RGB, buzzer, Arduino Mega, potenciômetro, botões e resistores. Devido à complexidade das conexões envolvidas, recomenda-se a consulta ao diagrama esquemático para compreender a disposição e a ligação dos componentes.
 
-<img src="circuito.png" width="700">
+<img src="imagens/circuito.png" width="700">
 
 ## Layout
 
 Abaixo está o layout do Sinfonora, com foco em uma interface visual limpa, uso estratégico de cores e elementos posicionados para facilitar a interatividade e adaptação do jogador ao desafio proposto.
 
-<img src="layout.jpeg" width="250">
+<img src="imagens/layout.jpeg" width="250">
 
 ## Código
 
@@ -83,7 +83,7 @@ Ouvir as notas tocadas, podendo fazer associação visual ou sonora, e marcar as
 
 Cada cartela do Bingo Musical Sinfonora contém nove duplas de notas musicais, organizadas de forma única. As combinações foram criadas para desafiar sua memória auditiva e visual, e percepção musical.
 
-<img src="cartela.png" width="250">
+<img src="imagens/cartela.png" width="250">
 
 #### Observação
 
