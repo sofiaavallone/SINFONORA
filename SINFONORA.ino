@@ -1,34 +1,35 @@
 // Constantes de pinos
 const byte BTN_PINS[7] = { 24, 26, 28, 30, 32, 34, 22 };  // botões de jogo
-const byte BTN_TUDO = 36;                                 // botão TUDO
-const LED_PINS_BNT_TUDO[3] = { 10, -1, -1 };            // led botão TUDO
-int COLOR_BTN_TUDO[3] = { 255, 0, 0 };                       // vermelho (botão TUDO)
+const byte BTN_BOTAO_TUDO = 36;                            // botão passar a vez
+int COLOR_BTN_TUDO[3] = { 255, 0, 0 };                    // vermelho (botão TUDO)
+const int LED_PINS_BTN_TUDO[3] = { 10, -1, -1 };          // led botão TUDO
 const byte BUZZER_PIN = 50;                               // buzzer
 const byte POT_PIN = A0;                                  // potenciômetro
-const int LED_PINS[7][3] = {                              // leds
-  {11, -1, -1},     // vermelho
-  {-1, 13, -1},     // verde
-  {4, 5, -1},       // amarelo
-  {9, 8, 7},        // roxo
-  {2, 3, -1},       // laranja
-  {-1, -1, 12},     // azul
-  {44, -1, 45},     // rosa
+const int LED_PINS[7][3] = {
+  // leds
+  { 11, -1, -1 },  // vermelho
+  { -1, 13, -1 },  // verde
+  { 4, 5, -1 },    // amarelo
+  { 9, 8, 7 },     // roxo
+  { 2, 3, -1 },    // laranja
+  { -1, -1, 12 },  // azul
+  { 44, -1, 45 },  // rosa
 };
 
 // Cores
 int COLORS[7][3] = {
-  {255, 0, 0},      // vermelho
-  {0, 255, 0},      // verde
-  {255, 70, 0},     // amarelo
-  {128, 0, 110},    // roxo
-  {255, 30, 0},     // laranja
-  {0, 0, 255},      // azul
-  {255, 0, 70},     // rosa
+  { 255, 0, 0 },    // vermelho
+  { 0, 255, 0 },    // verde
+  { 255, 70, 0 },   // amarelo
+  { 128, 0, 110 },  // roxo
+  { 255, 30, 0 },   // laranja
+  { 0, 0, 255 },    // azul
+  { 255, 0, 70 },   // rosa
 };
 
 // Parâmetros de jogo
 const int TAM_MAX_SEQ = 50;    // limite fixo, evita alocação dinâmica
-const int DEBOUNCE_MS = 50;    // debounce simples
+const int DEBOUNCE_MS = 350;    // debounce simples
 const int FREQ_ACERTO = 1200;  // Hz
 const int FREQ_PADRAO = 1000;  // Hz
 const int FREQ_ERRO = 2000;    // Hz
@@ -51,10 +52,10 @@ void setup() {
     pinMode(BTN_PINS[i], INPUT_PULLUP);
   }
 
-  pinMode(BTN_TUDO, INPUT_PULLUP);
+  pinMode(BTN_BOTAO_TUDO, INPUT_PULLUP);
 
   /* Leds */
-  for (int i = 0; i < 8; i++) {
+  for (int i = 0; i < 7; i++) {
     for (int c = 0; c < 3; c++) {
       if (LED_PINS[i][c] != -1) {
         pinMode(LED_PINS[i][c], OUTPUT);
@@ -103,14 +104,36 @@ int lerBotao() {
   for (byte i = 0; i < 7; i++) {
     if (digitalRead(BTN_PINS[i]) == LOW) {
       instanteDebounce = millis();
+      setColor(i, COLORS[i][0], COLORS[i][1], COLORS[i][2]);
+      if (i == 0) {
+        tone(BUZZER_PIN, 262, 500);  // dó
+      } else if (i == 1) {
+        tone(BUZZER_PIN, 294, 500);  // ré
+      } else if (i == 2) {
+        tone(BUZZER_PIN, 330, 500);  // mi
+      } else if (i == 3) {
+        tone(BUZZER_PIN, 349, 500);  // fá
+      } else if (i == 4) {
+        tone(BUZZER_PIN, 392, 500);  // sol
+      } else if (i == 5) {
+        tone(BUZZER_PIN, 440, 500);  // lá
+      } else if (i == 6) {
+        tone(BUZZER_PIN, 494, 500);  // si
+      }
       return i;  // botão de índice i
+    } else {
+      setColor(i, 0, 0, 0);
     }
   }
 
   /* Verifica botão PASSA */
-  if (digitalRead(BTN_TUDO) == LOW) {
+  if (digitalRead(BTN_BOTAO_TUDO) == LOW) {
     instanteDebounce = millis();
+    setColorTudo(LED_PINS_BTN_TUDO, COLOR_BTN_TUDO[0], COLOR_BTN_TUDO[1], COLOR_BTN_TUDO[2]);
+    tone(BUZZER_PIN, FREQ_PADRAO, DURACAO_TOM_MS);
     return 7;  // código especial para PASSA
+  } else {
+    setColorTudo(LED_PINS_BTN_TUDO, 0, 0, 0);
   }
 
   return -1;  // nada pressionado
@@ -126,25 +149,6 @@ void tocarSom(int freq) {
   delay(DURACAO_TOM_MS);  // garante que o som termine
   noTone(BUZZER_PIN);
 }
-
-/* Led e som do botão TUDO */
-void botaoTUDO_padrao(int freq) {
-  // Acende o LED
-  if (LED_PINS_BNT_TUDO[0] != -1) analogWrite(LED_PINS_BNT_TUDO[0], COLOR_BTN_TUDO[0]);
-  if (LED_PINS_BNT_TUDO[1] != -1) analogWrite(LED_PINS_BNT_TUDO[1], COLOR_BTN_TUDO[1]);
-  if (LED_PINS_BNT_TUDO[2] != -1) analogWrite(LED_PINS_BNT_TUDO[2], COLOR_BTN_TUDO[2]);
-
-  // Som padrão
-  tone(BUZZER_PIN, freq, DURACAO_TOM_MS);
-  delay(DURACAO_TOM_MS);
-  noTone(BUZZER_PIN);
-
-  // Apaga o LED
-  if (LED_PINS_BNT_TUDO[0] != -1) analogWrite(LED_PINS_BNT_TUDO[0], 0);
-  if (LED_PINS_BNT_TUDO[1] != -1) analogWrite(LED_PINS_BNT_TUDO[1], 0);
-  if (LED_PINS_BNT_TUDO[2] != -1) analogWrite(LED_PINS_BNT_TUDO[2], 0);
-}
-
 
 /**
 * modo1
@@ -247,51 +251,14 @@ void modo2(int valorPotInicial) {
   Serial.println(F("<<< Potenciômetro alterado – saindo do Modo 2 >>>"));
 }
 
-/* Leds e buzzer */
-void ledSom() {
-  for (int i = 0; i < 7; i++) {
-    int BUTTON_STATE = digitalRead(BTN_PINS[i]);
-    if (BUTTON_STATE == LOW) {
-      setColor(i, COLORS[i][0], COLORS[i][1], COLORS[i][2]);
-
-      switch(i) {
-        case 0:
-        tone(BUZZER_PIN, 262, 500); // dó
-        break;
-        case 1:
-        tone(BUZZER_PIN, 294, 500); // ré
-        break;
-        case 2:
-        tone(BUZZER_PIN, 330, 500); // mi
-        break;
-        case 3:
-        tone(BUZZER_PIN, 349, 500); // fá
-        break;
-        case 4:
-        tone(BUZZER_PIN, 392, 500); // sol
-        break;
-        case 5:
-        tone(BUZZER_PIN, 440, 500); // lá
-        break;
-        case 6:
-        tone(BUZZER_PIN, 494, 500); // si
-        break;
-      }
-
-      delay(500);
-      noTone(BUZZER_PIN);
-
-    } else {
-      setColor(i, 0, 0, 0);
-    }
-  if (digitalRead(BTN_TUDO) == LOW) {
-    botaoTUDO_padrao(FREQ_PADRAO);
-  }
-  }
-}
-
 void setColor(int ledIndex, int red, int green, int blue) {
   if (LED_PINS[ledIndex][0] != -1) analogWrite(LED_PINS[ledIndex][0], red);
   if (LED_PINS[ledIndex][1] != -1) analogWrite(LED_PINS[ledIndex][1], green);
   if (LED_PINS[ledIndex][2] != -1) analogWrite(LED_PINS[ledIndex][2], blue);
+}
+
+void setColorTudo(int ledIndex, int red, int green, int blue) {
+  if (LED_PINS_BTN_TUDO[0] != -1) analogWrite(LED_PINS_BTN_TUDO[0], red);
+  if (LED_PINS_BTN_TUDO[1] != -1) analogWrite(LED_PINS_BTN_TUDO[1], green);
+  if (LED_PINS_BTN_TUDO[2] != -1) analogWrite(LED_PINS_BTN_TUDO[2], blue);
 }
