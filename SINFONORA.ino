@@ -11,7 +11,7 @@ const int LED_PINS[7][3] = {
   { 11, -1, -1 },  // vermelho
   { -1, 13, -1 },  // verde
   { 4, 5, -1 },    // amarelo
-  { 9, 8, 7 },     // roxo
+  { 6, 8, 7 },     // roxo
   { 2, 3, -1 },    // laranja
   { -1, -1, 12 },  // azul
   { 44, -1, 45 },  // rosa
@@ -21,7 +21,7 @@ int COLORS[7][3] = {
   { 255, 0, 0 },    // vermelho
   { 0, 255, 0 },    // verde
   { 255, 70, 0 },   // amarelo
-  { 160, 32, 240 },  // roxo
+  { 200, 32, 200 },  // roxo
   { 255, 30, 0 },   // laranja
   { 0, 0, 255 },    // azul
   { 255, 0, 70 },   // rosa
