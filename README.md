@@ -15,13 +15,13 @@ A componente musical desempenha papel fundamental no desenvolvimento do jogo, po
 
 O circuito deste projeto utiliza os seguintes componentes: **LEDs RGB, buzzer, Arduino Mega, potenciômetro, botões e resistores**. Devido à complexidade das conexões envolvidas, recomenda-se a consulta ao diagrama esquemático para compreender a disposição e a ligação dos componentes.
 
-<img src="imagens/circuito.png" width="700">
+![Layout do Jogo](imagens/circuito.png)
 
 ## Layout
 
 Abaixo está o layout do Sinfonora, com foco em uma interface visual limpa, uso estratégico de cores e elementos posicionados para facilitar a interatividade e adaptação do jogador ao desafio proposto.
 
-<img src="imagens/layout.jpeg" width="250">
+![Layout do Jogo](imagens/layout.jpg)
 
 ## Código
 
